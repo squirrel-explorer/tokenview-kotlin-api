@@ -22,7 +22,7 @@ class BlockchainBTCAsyncTests: ApiTests() {
 
     @ParameterizedTest
     @CsvSource("btc, 1")
-    fun testBlockHeaderAsync(coin: String, blockHeight: Int) {
+    fun testBlockHeaderAsync(coin: String, blockHeight: Long) {
         runBlocking {
             val blockHeader = BlockchainTests.service.getBlockHeaderAsync(coin, blockHeight)
             assertEquals(blockHeader.blockHash, "00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048")

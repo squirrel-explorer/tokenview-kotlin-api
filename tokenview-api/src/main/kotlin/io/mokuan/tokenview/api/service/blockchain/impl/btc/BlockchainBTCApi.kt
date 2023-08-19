@@ -16,5 +16,5 @@ import retrofit2.http.Path
 
 interface BlockchainBTCApi: SyncApi {
     @GET("vipapi/block/{coin}/{blockHeight}")
-    fun getBlockHeader(@Path("coin") coin: String, @Path("blockHeight") blockHeight: Int): Call<ResponseListBean<BlockHeaderBean>>
+    fun getBlockHeader(@Path("coin") coin: String, @Path("blockHeight") blockHeight: Long): Call<ResponseListBean<BlockHeaderBean>>
 }

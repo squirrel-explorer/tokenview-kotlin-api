@@ -16,5 +16,5 @@ import retrofit2.http.Path
 
 interface BlockchainBTCAsyncApi: AsyncApi {
     @GET("vipapi/block/{coin}/{blockHeight}")
-    suspend fun getBlockHeaderAsync(@Path("coin") coin: String, @Path("blockHeight") blockHeight: Int): ApiResult<ResponseListBean<BlockHeaderBean>>
+    suspend fun getBlockHeaderAsync(@Path("coin") coin: String, @Path("blockHeight") blockHeight: Long): ApiResult<ResponseListBean<BlockHeaderBean>>
 }

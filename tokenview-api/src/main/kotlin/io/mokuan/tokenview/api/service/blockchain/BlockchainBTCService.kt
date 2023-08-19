@@ -11,6 +11,6 @@ import io.mokuan.tokenview.api.bean.blockchain.btc.BlockHeaderBean
 import io.mokuan.tokenview.api.ApiService
 
 interface BlockchainBTCService: ApiService {
-    fun getBlockHeader(coin: String, blockHeight: Int): BlockHeaderBean
-    suspend fun getBlockHeaderAsync(coin: String, blockHeight: Int): BlockHeaderBean
+    fun getBlockHeader(coin: String, blockHeight: Long): BlockHeaderBean
+    suspend fun getBlockHeaderAsync(coin: String, blockHeight: Long): BlockHeaderBean
 }

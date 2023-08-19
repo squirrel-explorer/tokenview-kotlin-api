@@ -21,7 +21,7 @@ class BlockchainBTCTests: ApiTests() {
 
     @ParameterizedTest
     @CsvSource("btc, 1")
-    fun testBlockHeader(coin: String, blockHeight: Int) {
+    fun testBlockHeader(coin: String, blockHeight: Long) {
         val blockHeader = BlockchainTests.service.getBlockHeader(coin, blockHeight)
         assertEquals(blockHeader.blockHash, "00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048")
         assertEquals(blockHeader.prevBlockHash, "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f")

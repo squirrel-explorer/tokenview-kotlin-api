@@ -15,11 +15,11 @@ class BlockchainBTCServiceImpl(private val client: ApiClient): BlockchainBTCServ
     private val api = client.createService(BlockchainBTCApi::class.java)
     private val apiAsync = client.createAsyncService(BlockchainBTCAsyncApi::class.java)
 
-    override fun getBlockHeader(coin: String, blockHeight: Int): BlockHeaderBean {
+    override fun getBlockHeader(coin: String, blockHeight: Long): BlockHeaderBean {
         return client.executeSync(api.getBlockHeader(coin, blockHeight)) ?: BlockHeaderBean()
     }
 
-    override suspend fun getBlockHeaderAsync(coin: String, blockHeight: Int): BlockHeaderBean {
+    override suspend fun getBlockHeaderAsync(coin: String, blockHeight: Long): BlockHeaderBean {
         return client.executeAsync(apiAsync.getBlockHeaderAsync(coin, blockHeight)) ?: BlockHeaderBean()
     }
 }

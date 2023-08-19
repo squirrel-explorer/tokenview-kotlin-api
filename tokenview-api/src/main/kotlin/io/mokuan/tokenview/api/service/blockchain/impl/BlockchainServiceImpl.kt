@@ -27,11 +27,11 @@ class BlockchainServiceImpl(config: ApiConfiguration): BlockchainService {
         return apiGeneral.getBlockchainListAsync()
     }
 
-    override fun getBlockHeader(coin: String, blockHeight: Int): BlockHeaderBean {
+    override fun getBlockHeader(coin: String, blockHeight: Long): BlockHeaderBean {
         return apiBTC.getBlockHeader(coin, blockHeight)
     }
 
-    override suspend fun getBlockHeaderAsync(coin: String, blockHeight: Int): BlockHeaderBean {
+    override suspend fun getBlockHeaderAsync(coin: String, blockHeight: Long): BlockHeaderBean {
         return apiBTC.getBlockHeaderAsync(coin, blockHeight)
     }
 }
