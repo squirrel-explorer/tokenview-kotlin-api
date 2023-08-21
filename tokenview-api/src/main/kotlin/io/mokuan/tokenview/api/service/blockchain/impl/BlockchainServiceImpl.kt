@@ -8,14 +8,13 @@
 package io.mokuan.tokenview.api.service.blockchain.impl
 
 import io.mokuan.tokenview.api.bean.blockchain.btc.BlockHeaderBean
+import io.mokuan.tokenview.api.service.DefaultService
 import io.mokuan.tokenview.api.service.blockchain.BlockchainService
 import io.mokuan.tokenview.api.service.blockchain.impl.btc.BlockchainBTCServiceImpl
 import io.mokuan.tokenview.api.service.blockchain.impl.general.BlockchainGeneralServiceImpl
-import io.mokuan.tokenview.client.ApiClient
 import io.mokuan.tokenview.client.config.ApiConfiguration
 
-class BlockchainServiceImpl(config: ApiConfiguration): BlockchainService {
-    private val client = ApiClient(config)
+class BlockchainServiceImpl(config: ApiConfiguration): DefaultService(config), BlockchainService {
     private val apiGeneral = BlockchainGeneralServiceImpl(client)
     private val apiBTC = BlockchainBTCServiceImpl(client)
 
